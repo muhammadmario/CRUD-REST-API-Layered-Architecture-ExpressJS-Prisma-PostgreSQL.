@@ -21,5 +21,12 @@ model User {
   id    Int     @id @default(autoincrement())
   name String
   username String @unique
+  role    Role     @default(USER)
   password String
+  refresh_token String? 
+}
+
+enum Role { 
+  USER
+  ADMIN
 }
